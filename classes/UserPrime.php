@@ -13,12 +13,10 @@
         ];       
 
         /* Costruttore */
-        function __construct($_loginDataArray, $_identificationData, $_paymentData) {
+        function __construct($_loginDataArray, $_identificationData) {
             $this -> paymentData["primeAccount"] = true;
 
-            $this -> setLoginData($_loginDataArray);
-            $this -> setIdentificationData($_identificationData);
-            $this -> setPaymentData($_paymentData);
+            parent::__construct($_loginDataArray, $_identificationData);
         }
 
         /* Funzioni per $primePrivileges */

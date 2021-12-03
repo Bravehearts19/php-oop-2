@@ -55,7 +55,7 @@
             } else {
                 $this -> identificationData["firstName"] = $newValue["firstName"];
                 $this -> identificationData["lastName"] = $newValue["lastName"];
-                if (isset($identificationData["address"])) {
+                if (isset($newValue["address"])) {
                     $this -> identificationData["address"] = $newValue["address"];
                 }
                 return $this;

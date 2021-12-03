@@ -15,13 +15,45 @@
                 require_once "./classes/User.php"; 
                 require_once "./classes/UserPrime.php"; 
                 
-                $usernormal = new User(["username" => "SimoneGranata19", "password" => "MyPassword"], ["firstName" => "Simone", "lastName" => "Granata", "address" => ["Via F. Petrarca 12", "Bosnasco", "PV", "Italy", "27040"]], ["paymentMethods" => [], "cart" => []]);
+                $userNormal = new User(
+                    [
+                        "username" => "SimoneGranata19",
+                        "password" => "MyPassword"
+                    ],
+                    [
+                        "firstName" => "Simone",
+                        "lastName" => "Granata", 
+                        "address" => [
+                            "street" => "Via F. Petrarca 12", 
+                            "city" => "Bosnasco",
+                            "province" => "PV",
+                            "country" => "Italy",
+                            "postalCode" => "27040",
+                        ]
+                    ]
+                );
 
-                var_dump($usernormal);
+                var_dump($userNormal);
 
-                $userprime = new UserPrime();
+                $userPrime = new UserPrime(
+                    [
+                        "username" => "SimoneGranata19",
+                        "password" => "MyPassword"
+                    ],
+                    [
+                        "firstName" => "Simone",
+                        "lastName" => "Granata", 
+                        "address" => [
+                            "street" => "Via F. Petrarca 12", 
+                            "city" => "Bosnasco",
+                            "province" => "PV",
+                            "country" => "Italy",
+                            "postalCode" => "27040",
+                        ]
+                    ]
+                );
 
-                var_dump($userprime);
+                var_dump($userPrime);
             ?>
         </main>
         <footer></footer>
