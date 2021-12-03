@@ -34,7 +34,8 @@
                 );
 
                 $userNormal->addNewPaymentMethod("paymentMethod");
-
+                $userNormal->addProductToCart("product");  
+                
                 var_dump($userNormal);
 
                 $userPrime = new UserPrime(
