@@ -80,6 +80,12 @@
         }
 
         /* Funzioni generiche */
+        protected function addNewPaymentMethod($paymentMethod) {
+            $this -> paymentData["paymentMethods"][] = $paymentMethod;
+            return $this;
+        }
+        protected function addProductToCart() {
 
+        }
     };
 ?>

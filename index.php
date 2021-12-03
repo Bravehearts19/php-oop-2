@@ -33,6 +33,8 @@
                     ]
                 );
 
+                $userNormal->addNewPaymentMethod("paymentMethod");
+
                 var_dump($userNormal);
 
                 $userPrime = new UserPrime(
