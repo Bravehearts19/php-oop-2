@@ -12,17 +12,16 @@
         <header></header>
         <main>
             <?php 
-                require_once "./classes/Classe.php"; 
+                require_once "./classes/User.php"; 
+                require_once "./classes/UserPrime.php"; 
                 
-                $classe1 = new Classe("Argomento1 scelto da me", "Argomento2 scelto da me");
-                $classe1 -> variabile1 = "Valore che decido";
+                $usernormal = new User(["username" => "SimoneGranata19", "password" => "MyPassword"], ["firstName" => "Simone", "lastName" => "Granata", "address" => ["Via F. Petrarca 12", "Bosnasco", "PV", "Italy", "27040"]], ["paymentMethods" => [], "cart" => []]);
 
-                var_dump($classe1);
+                var_dump($usernormal);
 
-                $classe2 = new Classe("Altro argomento1 scelto da me", "Altro argomento2 scelto da me");
-                $classe2 -> variabile1 = "Altro valore che decido";
+                $userprime = new UserPrime();
 
-                var_dump($classe2);
+                var_dump($userprime);
             ?>
         </main>
         <footer></footer>
