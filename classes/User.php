@@ -37,7 +37,11 @@
         }
         protected function setLoginData(array $newValue) {
             if(strlen($newValue["username"]) < 4 || strlen($newValue["password"]) <= 5) {
-                return;
+                try {
+                    throw new Exception("Username o password non validi");
+                } catch (Exception $e) {
+                    echo "Eccezione: " . $e -> getMessage();
+                }
             } else {
                 $this -> loginData["username"] = $newValue["username"];
                 $this -> loginData["password"] = $newValue["password"];
@@ -50,8 +54,12 @@
             return $this -> identificationData;
         }
         protected function setIdentificationData(array $newValue) {
-            if(strlen($newValue["firstName"]) < 1 || strlen($newValue["lastName"]) < 1) {
-                return;
+            if(strlen($newValue["firstName"]) < 2 || strlen($newValue["lastName"]) < 2) {
+                try {
+                    throw new Exception("Nome o cognome troppo corti");
+                } catch (Exception $e) {
+                    echo "Eccezione: " . $e -> getMessage();
+                }
             } else {
                 $this -> identificationData["firstName"] = $newValue["firstName"];
                 $this -> identificationData["lastName"] = $newValue["lastName"];
@@ -74,8 +82,6 @@
                 $this -> paymentData["shippingFees"] = 0; 
                 $this -> paymentData["shippingDuration"] = 2;
             }
-            /* $this -> paymentData["paymentMethods"] = $newValue["paymentMethods"];
-            $this -> paymentData["cart"] = $newValue["cart"]; */
             return $this;
         }
 
@@ -88,7 +94,7 @@
                 }
             }
             if($add === true) {
-                $this -> paymentData["paymentMethods"][] = $paymentMethod;
+                $this -> paymentData["paymentMethods"][] = $newPaymentMethod;
             }
             return $this;
         }
