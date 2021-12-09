@@ -1,16 +1,8 @@
 <?php
     require_once __DIR__ . "/User.php";
-
+    require_once __DIR__ . "/../traits/PrimePrivileges.php";
     class UserPrime extends User {
-        public $primePrivileges = [
-            "discount" => 10,
-            "features" => [
-                "primeGaming" => true,
-                "primeVideo" => true,
-                "primeMusic" => true,
-                "primePhotos" => true,
-            ],
-        ];       
+        use PrimePrivileges;       
 
         /* Costruttore */
         function __construct($_loginDataArray, $_identificationData) {
